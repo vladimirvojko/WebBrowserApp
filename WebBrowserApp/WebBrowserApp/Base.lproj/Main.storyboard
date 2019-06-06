@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Browser View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BrowserViewController" customModule="WebBrowserApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Od4-hE-E23">
+                                <rect key="frame" x="0.0" y="50" width="768" height="930"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VK1-vP-NWE">
+                                <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fuf-LV-wGb">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8B-1e-xZa">
+                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="44"/>
+                                                <state key="normal" image="icons-back"/>
+                                                <connections>
+                                                    <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOJ-4k-KyW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXg-G6-BeQ">
+                                                <rect key="frame" x="153.5" y="0.0" width="153.5" height="44"/>
+                                                <state key="normal" image="icons-forward"/>
+                                                <connections>
+                                                    <action selector="goForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N2t-03-vNe"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bX-6X-esK">
+                                                <rect key="frame" x="307" y="0.0" width="154" height="44"/>
+                                                <state key="normal" title="Share"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kna-dY-2gL">
+                                                <rect key="frame" x="461" y="0.0" width="153.5" height="44"/>
+                                                <state key="normal" title="History"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPT-c6-S4L">
+                                                <rect key="frame" x="614.5" y="0.0" width="153.5" height="44"/>
+                                                <state key="normal" title="New Tab"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.78853017091751099" green="0.7890656590461731" blue="0.80633032321929932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fuf-LV-wGb" firstAttribute="top" secondItem="VK1-vP-NWE" secondAttribute="top" id="2ar-ls-rd1"/>
+                                    <constraint firstAttribute="height" constant="44" id="8nV-GF-i4g"/>
+                                    <constraint firstAttribute="trailing" secondItem="fuf-LV-wGb" secondAttribute="trailing" id="Hfm-qM-RSF"/>
+                                    <constraint firstAttribute="bottom" secondItem="fuf-LV-wGb" secondAttribute="bottom" id="IYs-tO-iSa"/>
+                                    <constraint firstItem="fuf-LV-wGb" firstAttribute="leading" secondItem="VK1-vP-NWE" secondAttribute="leading" id="mm6-Bd-BDL"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sb7-c2-mlo" customClass="SearchTextField" customModule="WebBrowserApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="768" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sb7-c2-mlo" secondAttribute="trailing" id="2PJ-o7-9Kc"/>
+                            <constraint firstItem="Od4-hE-E23" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9P9-WC-caM"/>
+                            <constraint firstItem="VK1-vP-NWE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DkC-xo-uSo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VK1-vP-NWE" secondAttribute="bottom" id="FWP-19-7OB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VK1-vP-NWE" secondAttribute="trailing" id="GvK-rb-FXv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Od4-hE-E23" secondAttribute="trailing" id="LEC-0C-vsP"/>
+                            <constraint firstItem="Sb7-c2-mlo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cB0-YQ-zCE"/>
+                            <constraint firstItem="VK1-vP-NWE" firstAttribute="top" secondItem="Od4-hE-E23" secondAttribute="bottom" id="fJQ-BP-1Ki"/>
+                            <constraint firstItem="Sb7-c2-mlo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gXF-2n-31Z"/>
+                            <constraint firstItem="Od4-hE-E23" firstAttribute="top" secondItem="Sb7-c2-mlo" secondAttribute="bottom" id="lx2-kU-QLm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Sb7-c2-mlo" id="VZX-Ro-VJl"/>
+                        <outlet property="webView" destination="Od4-hE-E23" id="YTM-wB-Oye"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.28125" y="138.8671875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons-back" width="48" height="48"/>
+        <image name="icons-forward" width="48" height="48"/>
+    </resources>
+</document>
