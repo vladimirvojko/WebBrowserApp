@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B750F0122AA477B004B5B45 /* APIServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B750F0022AA477B004B5B45 /* APIServiceController.swift */; };
 		8BF7D3DE22A935D700773AEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7D3DD22A935D700773AEA /* AppDelegate.swift */; };
 		8BF7D3E022A935D700773AEA /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7D3DF22A935D700773AEA /* BrowserViewController.swift */; };
 		8BF7D3E322A935D700773AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7D3E122A935D700773AEA /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B750F0022AA477B004B5B45 /* APIServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceController.swift; sourceTree = "<group>"; };
 		8BF7D3DA22A935D700773AEA /* WebBrowserApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebBrowserApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF7D3DD22A935D700773AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BF7D3DF22A935D700773AEA /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				8BF7D3F922A9510800773AEA /*  NetworkSevice.swift */,
+				8B750F0022AA477B004B5B45 /* APIServiceController.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B750F0122AA477B004B5B45 /* APIServiceController.swift in Sources */,
 				8BF7D3E022A935D700773AEA /* BrowserViewController.swift in Sources */,
 				8BF7D3FA22A9510800773AEA /*  NetworkSevice.swift in Sources */,
 				8BF7D3F722A94EE400773AEA /* Debouncer.swift in Sources */,

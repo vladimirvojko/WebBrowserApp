@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias SuccessBlock = ([String:Any]) -> Void
+typealias SuccessBlock = ([Any]) -> Void
 typealias FailureBlock = (Error) -> Void
 
 enum  HttpMethod: String{
@@ -16,13 +16,13 @@ enum  HttpMethod: String{
 }
 
 class NetworkService {
-    func GET(url:String, parameters:[String : Any], success: SuccessBlock, failure: FailureBlock) -> URLSessionDataTask {
-        
+    func GET(url:String, parameters:[String : Any], success: @escaping SuccessBlock, failure: @escaping FailureBlock) -> URLSessionDataTask {
+        return self.serviceHit(url: url, method: .get, parametrs: parameters, headers: nil, success: success, failure: failure)
     }
     
     
-    private func serviceHit(url:String, method: HttpMethod, parametrs:[String:Any], headers:[String: Any], success: @escaping SuccessBlock, failure: @escaping FailureBlock) {
-        var headers = ["Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"]
+    private func serviceHit(url:String, method: HttpMethod, parametrs:[String:Any], headers:[String: Any]?, success: @escaping SuccessBlock, failure: @escaping FailureBlock) -> URLSessionDataTask {
+        let headers = ["Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"]
         
         var request: URLRequest = URLRequest(url: URL(string: url)!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 60.0)
         request.httpMethod = method.rawValue
@@ -35,9 +35,20 @@ class NetworkService {
                 failure(error!)
             } else {
                 guard  let httpResponse = response as? HTTPURLResponse else { return }
-                httpResponse.statusCode
+                print(httpResponse.statusCode)
+                
+                if httpResponse.statusCode == 200, let responseData: Data = data {
+                    let json = try? JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                    if json is [Any] {
+//                        success(json)
+                    }
+                    
+                    
+                    
+                }
             }
             
         }
+        return dataTask
     }
 }
